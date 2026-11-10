@@ -1,0 +1,306 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Student Learning Resource Hub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--h:215;--S:80%;--L:91%;--L2:96%;--D:60%;--card:#fff;--tx:#3b3550;--mut:#7d7898;--bd:rgba(0,0,0,.08)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--S:35%;--L:30%;--L2:19%;--D:72%;--card:#2a2739;--tx:#f1ecff;--mut:#b3aad0;--bd:rgba(255,255,255,.12)}}
+:root[data-theme="dark"]{--S:35%;--L:30%;--L2:19%;--D:72%;--card:#2a2739;--tx:#f1ecff;--mut:#b3aad0;--bd:rgba(255,255,255,.12)}
+:root{--main:hsl(var(--h) var(--S) var(--L));--soft:hsl(var(--h) var(--S) var(--L2));--strong:hsl(var(--h) 55% var(--D));--a1:hsl(calc(var(--h) + 70) var(--S) var(--L));--a2:hsl(calc(var(--h) + 190) var(--S) var(--L))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--soft);color:var(--tx);font:16px/1.5 Nunito,system-ui,sans-serif;transition:background .3s}
+main{max-width:900px;margin:0 auto;padding:18px 16px 56px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+h1{font-size:1.8rem;margin:.1em 0;font-weight:800}p.sub{color:var(--mut);margin:0 0 6px}
+h2{font-size:.85rem;font-weight:800;color:var(--strong);margin:20px 0 6px;letter-spacing:.05em}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit}
+.chip,.nv{border:2px solid transparent;background:var(--main);color:var(--tx);border-radius:999px;padding:7px 14px;cursor:pointer;font-weight:700;transition:transform .12s}
+.chip:hover,.nv:hover{transform:translateY(-2px)}
+.chip.on,.nv.on{border-color:var(--strong);box-shadow:0 3px 0 var(--strong)}
+#subjects .chip{background:hsl(var(--h) var(--S) var(--L))}
+#subjects .chip.on{border-color:hsl(var(--h) 55% var(--D));box-shadow:0 3px 0 hsl(var(--h) 55% var(--D))}
+.ctl{display:flex;flex-wrap:wrap;gap:8px}
+input,select{font:inherit;color:var(--tx);padding:9px 12px;border:2px solid var(--main);border-radius:14px;background:var(--card);min-width:0}
+.ctl>*{flex:1;min-width:150px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:14px}
+.card{background:var(--card);border:2px solid var(--main);border-top:8px solid var(--strong);border-radius:20px;padding:14px 16px}
+.card:nth-child(4n){border-top-color:var(--a1)}.card:nth-child(7n){border-top-color:var(--a2)}
+.card a{color:var(--tx);font-weight:800;text-decoration:none;font-size:1.02rem}
+.card a:hover{text-decoration:underline;text-decoration-color:var(--strong)}
+.card p{margin:.3em 0 .6em;color:var(--mut);font-size:.9rem}
+.tag{display:inline-block;background:var(--main);border-radius:999px;padding:2px 10px;font-size:.76rem;font-weight:700;margin:0 6px 4px 0}
+.tag.m{background:var(--a1)}.tag.u{background:var(--a2)}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:24px}
+details,.about{margin-top:28px;background:var(--card);border:2px dashed var(--strong);border-radius:20px;padding:14px 18px}
+summary{cursor:pointer;font-weight:800}
+.about{border-style:solid;border-color:var(--main)}.about h3{margin:.2em 0}
+form{display:grid;gap:8px;margin-top:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.go{background:var(--strong);color:#fff;border:0;border-radius:14px;padding:10px;font-weight:800;cursor:pointer}
+.note{font-size:.82rem;color:var(--mut);margin-top:10px}
+.pr{color:#3b3550}.pf{background:hsl(140 60% 85%)}.pt{background:hsl(48 90% 80%)}.pp{background:hsl(340 80% 86%)}
+.hero{font-size:clamp(1.3rem,4.8vw,1.8rem);line-height:1.25;font-weight:800;margin:8px 0 4px}.hl{background:var(--main);border-radius:10px;padding:0 8px}
+[hidden]{display:none!important}
+</style></head><body><main>
+<header><h1>Student Learning Resource Hub</h1><nav class="row"><button class="nv on" data-v="res" onclick="nav('res')">Resources</button><button class="nv" data-v="about" onclick="nav('about')">About</button></nav></header>
+<p class="hero">School is just the start. 🚀<br>Your curiosity does the <span class="hl">rest</span>.</p><p class="sub">Pick a subject. Learn at your own pace. Keep going, anytime, anywhere.</p><div id="res">
+<h2>1 · SUBJECT</h2><div class="row" id="subjects"></div>
+<h2>2 · CATEGORY</h2><div class="row" id="cats"></div>
+<h2>3 · FILTER &amp; SORT</h2>
+<div class="ctl"><input id="q" placeholder="🔍 Search topic or title"><select id="meth"></select><select id="price"><option value="">All prices</option><option>Free</option><option>Free trial</option><option>Paid</option></select><select id="sort"><option value="m">Sort by material / topic</option><option value="h">Sort by type / exam</option><option value="t">Sort by title</option></select></div>
+<div class="grid" id="list"></div>
+<details><summary>➕ Add a link you found (everyone will see it)</summary>
+<form id="f"><input name="t" placeholder="Title" required><input name="u" type="url" placeholder="https://..." required>
+<select name="s" id="fs"></select><select name="c"><option value="Lesson Plan">Lessons</option><option>Media</option><option>Exams</option></select><select name="p"><option>Free</option><option>Free trial</option><option>Paid</option></select>
+<input name="m" placeholder="Material / topic" required><input name="h" placeholder="Type (Video, Practice…) or exam (A Level, SAT, IELTS)" required>
+<input name="n" placeholder="Short note (optional)"><button class="go">Add 🌟</button></form>
+<p class="note" id="dbnote"></p></details>
+<p class="note">Starter list. Indonesian government sites were renamed in 2024 (kemdikbud → kemendikdasmen), so please report any link that doesn't open and add the right one with the form above.</p>
+</div><section id="about" class="about" hidden><h3>About this project</h3>
+<p>Student Learning Resource Hub was developed by <b>Luluk Fitriyani</b>. Learning does not stop when the bell rings. This hub gathers free videos, simulations and practice materials in one place, so you can keep learning on your own, anytime.</p>
+<p><b>How to use it:</b> choose a subject, then Lessons, Media or Exams. Search for a topic, filter by type, then open a resource. Use lessons and videos to understand a topic, media to explore it, and exam resources to practise.</p>
+<p><b>Contribute:</b> found something that helped you, or want to send feedback? Use our one-question form: <span id="formlink"></span></p>
+<p class="note" id="aboutnote">The "Add a link" button on the Resources page saves links only on your own device, so other people cannot see them. To share a link with everyone, please use the form above.</p>
+<p class="note">Links point to external websites that are not owned by this project. Price labels (Free, Free trial, Paid) are a guide and can change, so please check before you rely on a resource. Websites change over time.</p></section></main>
+<script>
+const S=["Mathematics","Physics","Chemistry","Biology","English","Economics","Sociology","History","Geography"];
+const E={Physics:"⚛️",Chemistry:"🧪",Biology:"🧬",Mathematics:"📐",English:"📖",Economics:"💹",Sociology:"👥",History:"🏛️",Geography:"🌏"};
+const CE={"Lesson Plan":"📝","Media":"🎬","Exams":"🎓"};
+const NS="Physics,Chemistry,Biology,Mathematics,English,Economics,History,Geography";
+const SCI="Physics,Chemistry,Biology";
+const P={"Save My Exams":"Free trial","Nearpod":"Free trial","Genially":"Free trial","Kahoot!":"Free trial","Quizizz":"Free trial","Wordwall":"Free trial","Padlet":"Free trial","Newsela":"Free trial","ExamSolutions":"Free trial","tutor2u Economics":"Free trial","tutor2u Sociology":"Free trial"};
+const pc=p=>p==="Paid"?"pp":p==="Free trial"?"pt":"pf";
+// [subjects, category, title, url, material, method/exam, note]
+const D=[
+["*","Lesson Plan","Portal Garuda","https://garuda.kemdiktisaintek.go.id","Indonesian research","Research","Search Indonesian journals for research on topics you are studying."],
+["*","Lesson Plan","Google Scholar","https://scholar.google.com","Research","Research","Search academic papers for projects and essays."],
+["*","Lesson Plan","OER Commons","https://oercommons.org","All subjects","Open resources","Free open lessons, filter by grade and subject."],
+["*","Lesson Plan","PBLWorks","https://www.pblworks.org","Project design","PjBL","Project-based learning ideas and examples."],
+["*","Lesson Plan","Edutopia","https://www.edutopia.org","Strategies","Student-centered","Study strategies and short videos."],
+["*","Lesson Plan","Share My Lesson","https://sharemylesson.com","All subjects","Educator-made","Lessons shared by other educators."],
+["*","Lesson Plan","BetterLesson","https://betterlesson.com","All subjects","Educator-made","Full lesson sequences with materials."],
+["*","Lesson Plan","Khan Academy","https://www.khanacademy.org","All subjects","Mastery","Video lessons and practice exercises."],
+["*","Media","Rumah Pendidikan","https://belajar.kemendikdasmen.go.id","All subjects","Official portal","Official learning resources, books and tools."],
+["*","Media","Buku Sekolah Digital","https://buku.kemendikdasmen.go.id","Textbooks","Textbook","Free official textbooks."],
+["*","Media","Wordwall","https://wordwall.net","Games & quizzes","Gamification","Make or reuse interactive activities."],
+["*","Media","Kahoot!","https://kahoot.com","Quizzes","Gamification","Live quiz games."],
+["*","Media","Quizizz","https://quizizz.com","Quizzes","Gamification","Self-paced quizzes with a big shared library."],
+["*","Media","Canva for Education","https://www.canva.com/education/","Slides & posters","Creation","Free with a school account. Make posters, infographics and videos."],
+["*","Media","Padlet","https://padlet.com","Collaboration","Collaborative","Digital boards for brainstorming and project work."],
+["*","Media","TED-Ed","https://ed.ted.com","Animated lessons","Flipped","Short animated videos with discussion questions."],
+["*","Media","Crash Course","https://www.youtube.com/@crashcourse","Videos","Flipped","Fast, fun videos across many subjects."],
+["*","Media","OpenStax","https://openstax.org","Textbooks","Textbook","Free peer-reviewed college and high school textbooks."],
+["Physics,Mathematics","Lesson Plan","TeachEngineering","https://www.teachengineering.org","Energy, motion, design","STEAM / PjBL","Tested lessons built around engineering design."],
+["Physics","Lesson Plan","The Physics Classroom","https://www.physicsclassroom.com","Mechanics, waves, electricity","Concept-first","Concept builders, labs and tutorials."],
+["Physics","Lesson Plan","ComPADRE","https://www.compadre.org","Physics education","Research-based","Physics education resources from AAPT."],
+["Physics","Media","PhET Physics","https://phet.colorado.edu/en/simulations/filter?subjects=physics","Motion, circuits, waves","Inquiry","Free interactive simulations with guided activities."],
+["Physics","Media","Open Source Physics","https://www.compadre.org/osp/","Simulations","Modeling","Ready-made models you can run and edit."],
+["Physics","Media","Falstad Circuit Simulator","https://www.falstad.com/circuit/","Circuits","Discovery","Build and watch circuits run in the browser."],
+["Physics","Media","Walter Fendt Applets","https://www.walter-fendt.de/html5/phen/","Mechanics, optics, EM","Discovery","Simple, fast simulations."],
+["Physics","Media","The Physics Aviary","https://www.thephysicsaviary.com","Labs & games","Virtual lab","Free simulated labs and challenges."],
+["Physics","Media","phyphox","https://phyphox.org","Phone sensors","Hands-on","Turn phones into sensors for real experiments."],
+["Chemistry","Lesson Plan","RSC Education","https://edu.rsc.org","Chemistry","Practical","Royal Society of Chemistry lessons and practicals."],
+["Chemistry","Lesson Plan","ACS High School Resources","https://www.acs.org/education/resources/highschool.html","Chemistry","Inquiry","Activities from the American Chemical Society."],
+["Chemistry","Media","PhET Chemistry","https://phet.colorado.edu/en/simulations/filter?subjects=chemistry","Atoms, molecules, solutions","Inquiry","Interactive chemistry simulations."],
+["Chemistry","Media","ChemCollective","https://chemcollective.org","Stoichiometry, acid-base","Virtual lab","Virtual labs when equipment is limited."],
+["Chemistry","Media","MolView","https://molview.org","Molecules","3D models","Draw and view molecules in 3D."],
+["Chemistry","Media","ChemTube3D","https://www.chemtube3d.com","Organic, inorganic","3D models","Interactive 3D animations of structures and mechanisms."],
+["Chemistry","Media","Ptable","https://ptable.com","Periodic table","Reference","Interactive periodic table with properties."],
+["Chemistry","Media","LibreTexts Chemistry","https://chem.libretexts.org","Full chemistry texts","Textbook","Free open chemistry textbooks."],
+["Biology","Lesson Plan","HHMI BioInteractive","https://www.biointeractive.org","Cells, genetics, ecology","Inquiry / Case study","Free lessons, films and data activities."],
+["Biology","Lesson Plan","NCBE","https://www.ncbe.reading.ac.uk","Practicals","Practical","Biology practical protocols and ideas."],
+["Biology","Lesson Plan","Understanding Evolution","https://evolution.berkeley.edu","Evolution","Inquiry","Learning resources from UC Berkeley."],
+["Biology","Lesson Plan","Science Buddies","https://www.sciencebuddies.org","Science projects","PjBL","Project ideas with step-by-step guides."],
+["Biology","Media","PhET Biology","https://phet.colorado.edu/en/simulations/filter?subjects=biology","Genes, cells, ecosystems","Inquiry","Interactive biology simulations."],
+["Biology","Media","Learn.Genetics","https://learn.genetics.utah.edu","Genetics, cells","Interactive","Virtual labs and 3D tours from the University of Utah."],
+["Biology","Media","LabXchange","https://www.labxchange.org","Virtual labs","Virtual lab","Free virtual labs and pathways from Harvard."],
+["Biology","Media","Cells Alive","https://www.cellsalive.com","Cell structure","Interactive","Cell models and animations."],
+["Mathematics","Lesson Plan","Illustrative Mathematics","https://illustrativemathematics.org","Tasks","Problem-based","Free tasks and curriculum."],
+["Mathematics","Lesson Plan","NRICH","https://nrich.maths.org","Problem solving","Inquiry","Rich tasks for deeper thinking."],
+["Mathematics","Lesson Plan","youcubed","https://www.youcubed.org","Growth mindset math","Inquiry","Open tasks and ideas from Stanford."],
+["Mathematics","Lesson Plan","Open Middle","https://www.openmiddle.com","Problems","Problem-based","Challenging problems with multiple paths."],
+["Mathematics","Media","GeoGebra Materials","https://www.geogebra.org/materials","Geometry, functions, stats","Discovery","Ready-made applets you can customise."],
+["Mathematics","Media","Desmos","https://www.desmos.com","Graphing","Discovery","Graphing calculator and interactive activities."],
+["Mathematics","Media","Mathigon","https://mathigon.org","Interactive courses","Interactive","Beautiful interactive math explorations."],
+["Mathematics","Media","Seeing Theory","https://seeing-theory.brown.edu","Statistics","Visual","Visual introduction to probability and statistics."],
+["Mathematics","Media","3Blue1Brown","https://www.3blue1brown.com","Concepts","Flipped","Visual explanations of big ideas."],
+["English","Lesson Plan","TeachingEnglish","https://www.teachingenglish.org.uk","Skills, grammar","Communicative","British Council lessons and tips."],
+["English","Lesson Plan","ReadWriteThink","https://www.readwritethink.org","Reading & writing","Student-centered","Lessons and interactive activities."],
+["English","Media","LearnEnglish Teens","https://learnenglishteens.britishcouncil.org","Skills practice","Self-study","Reading, listening and grammar for teens."],
+["English","Media","BBC Learning English","https://www.bbc.co.uk/learningenglish","Listening","Authentic input","Short programmes and vocabulary."],
+["English","Media","ReadWorks","https://www.readworks.org","Reading passages","Close reading","Free passages with questions."],
+["English","Media","Newsela","https://newsela.com","News articles","Differentiated","Current articles at several reading levels."],
+["Economics","Lesson Plan","EconEdLink","https://www.econedlink.org","Economics","Inquiry / Simulation","Free lessons from the Council for Economic Education."],
+["Economics","Lesson Plan","Federal Reserve Education","https://www.federalreserveeducation.org","Money, banking","Simulation","Lessons, games and videos."],
+["Economics","Lesson Plan","tutor2u Economics","https://www.tutor2u.net/economics","A Level topics","Exam-focused","Notes and quizzes."],
+["Economics","Media","Our World in Data","https://ourworldindata.org","Charts & data","Data inquiry","Free charts on development, trade and poverty."],
+["Economics","Media","Gapminder","https://www.gapminder.org/teach","Development data","Data inquiry","Fact-based slides and tools to explore world data."],
+["Economics","Media","FRED","https://fred.stlouisfed.org","Economic data","Data inquiry","Real time-series data for graphing."],
+["Economics","Media","Marginal Revolution University","https://mru.org","Videos","Flipped","Free short economics courses."],
+["Sociology","Lesson Plan","tutor2u Sociology","https://www.tutor2u.net/sociology","A Level topics","Exam-focused","Notes and quizzes."],
+["Sociology","Lesson Plan","Sociology Central","https://www.sociology.org.uk","Research methods, theories","Exam-focused","Free A Level style resources."],
+["Sociology","Media","OpenStax Intro to Sociology","https://openstax.org/details/books/introduction-sociology-3e","Textbook","Textbook","Free full textbook."],
+["Sociology","Media","Our World in Data","https://ourworldindata.org","Social data","Data inquiry","Charts on inequality, education, health."],
+["Sociology","Media","Pew Research Center","https://www.pewresearch.org","Surveys","Data inquiry","Real survey data for analysis."],
+["History","Lesson Plan","Digital Inquiry Group","https://inquirygroup.org","Source analysis","Inquiry","Reading Like a Historian lessons (formerly Stanford SHEG)."],
+["History","Lesson Plan","Facing History","https://www.facinghistory.org","Identity, democracy","Discussion","Resources and discussion ideas."],
+["History","Lesson Plan","DocsTeach","https://www.docsteach.org","Primary sources","Source analysis","National Archives activities."],
+["History","Lesson Plan","Library of Congress Primary Sources","https://www.loc.gov/programs/teachers/","Primary sources","Source analysis","Sets of primary sources to explore."],
+["History","Media","World History Encyclopedia","https://www.worldhistory.org","Articles, maps","Reference","Free articles, maps and timelines."],
+["History","Media","Google Arts & Culture","https://artsandculture.google.com","Museums","Virtual visit","Virtual museum tours and stories."],
+["History","Media","Europeana","https://www.europeana.eu","Archives","Source analysis","Digitised sources from European archives."],
+["Geography","Lesson Plan","National Geographic Education","https://education.nationalgeographic.org","Maps, earth, cultures","Inquiry","Lessons and activities."],
+["Geography","Lesson Plan","RGS Schools","https://www.rgs.org/schools","Fieldwork","Fieldwork","Royal Geographical Society learning resources."],
+["Geography","Media","Google Earth","https://earth.google.com","Maps","Exploration","Explore places and make map stories."],
+["Geography","Media","ArcGIS StoryMaps","https://storymaps.arcgis.com","Maps","Project","Students build interactive map stories."],
+["Geography","Media","NASA Earth Observatory","https://earthobservatory.nasa.gov","Earth images","Data inquiry","Satellite images and articles."],
+["Geography","Media","Earth Nullschool","https://earth.nullschool.net","Wind, ocean, weather","Visual","Live global wind and ocean map."],
+["Geography","Media","Seterra","https://www.seterra.com","Map quizzes","Gamification","Map quiz games."],
+["Geography","Media","BMKG","https://www.bmkg.go.id","Weather, earthquakes","Local data","Indonesian weather, climate and earthquake data."],
+["Geography,Economics,Sociology","Media","Gapminder Tools","https://www.gapminder.org/tools","Development data","Data inquiry","Animated charts on health, income and population."],
+["*","Exams","Cambridge International AS & A Level","https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level/","Syllabus & papers","A Level","Official syllabuses. Some papers need a school login."],
+["*","Exams","Pearson Edexcel International A Level","https://qualifications.pearson.com","Syllabus & papers","A Level","Official specs and past papers."],
+["*","Exams","AQA Past Papers","https://www.aqa.org.uk/find-past-papers-and-mark-schemes","Past papers","A Level","Official past papers and mark schemes."],
+["*","Exams","Save My Exams","https://www.savemyexams.com","Notes & past papers","A Level","Revision notes and papers by topic. Some content is paid."],
+["*","Exams","GCE Guide","https://www.gceguide.com","Past papers archive","A Level","Large community archive of Cambridge papers."],
+["Physics,Chemistry,Biology,Mathematics,Economics,Geography,English","Exams","Physics & Maths Tutor","https://www.physicsandmathstutor.com","Past papers by topic","A Level","Free papers sorted by topic. Check your subject is listed."],
+["Mathematics,English","Exams","College Board SAT Practice","https://satsuite.collegeboard.org/practice","Official practice tests","SAT","Official digital SAT practice (Bluebook)."],
+["Mathematics,English","Exams","Khan Academy SAT Prep","https://www.khanacademy.org/test-prep/sat","Practice & lessons","SAT","Free prep built with College Board."],
+[NS,"Exams","AP Central","https://apcentral.collegeboard.org","Past exam questions","SAT / AP","SAT Subject Tests no longer exist. AP exams are the closest subject-level option."],
+["English","Exams","IELTS Official Preparation","https://ielts.org/take-a-test/preparation-resources","Practice","IELTS","Official sample tests and tips."],
+["English","Exams","British Council IELTS Prep","https://takeielts.britishcouncil.org/take-ielts/prepare","Practice","IELTS","Official prep materials and free practice."],
+["English","Exams","IDP IELTS Prepare","https://ielts.idp.com/prepare","Practice","IELTS","Free practice tests and lessons."],
+["English","Exams","IELTS Liz","https://ieltsliz.com","Lessons","IELTS","Free lessons for all four skills."],
+["Physics,Chemistry,Biology,Mathematics,Geography","Media","PhET Interactive Simulations","https://phet.colorado.edu/","Sciences & math","Inquiry","The full PhET library. Filter by subject, grade and language. Many simulations are translated into Indonesian."],
+["*","Media","CK-12","https://www.ck12.org","Flexbooks & simulations","Self-paced","Free customisable textbooks, practice and simulations."],
+["*","Media","Nearpod","https://nearpod.com","Interactive lessons","Interactive","Lessons with polls, quizzes and virtual trips. Free tier."],
+["*","Media","Genially","https://genial.ly","Interactive slides","Creation","Make interactive slides, games and infographics."],
+["*","Media","Smithsonian Learning Lab","https://learninglab.si.edu","Collections","Source analysis","Millions of images and objects, organised into collections you can adapt."],
+["Physics","Media","PhET Waves & Sound","https://phet.colorado.edu/en/simulations/filter?subjects=sound-and-waves","Waves, sound, light","Inquiry","Simulations of wave behaviour."],
+["Physics","Media","Concord Consortium","https://concord.org/stem-resources/","Models & probes","Modeling","Free interactive science models and activities."],
+["Physics","Media","myPhysicsLab","https://www.myphysicslab.com","Oscillators, collisions","Simulation","Classic mechanics simulations."],
+["Physics","Media","NASA Space Place","https://spaceplace.nasa.gov","Space, earth","Visual","Student-friendly NASA activities."],
+["Physics","Media","Stellarium Web","https://stellarium-web.org","Astronomy","Exploration","Planetarium in the browser."],
+["Chemistry","Media","Chemix","https://chemix.org","Lab diagrams","Creation","Draw lab setups and diagrams."],
+["Chemistry","Media","Periodic Videos","https://www.periodicvideos.com","Elements","Flipped","A video for every element, University of Nottingham."],
+["Chemistry","Media","PubChem Periodic Table","https://pubchem.ncbi.nlm.nih.gov/periodic-table/","Elements data","Data inquiry","Interactive table linked to real data."],
+["Chemistry","Media","ChemEd DL","https://www.chemeddl.org","Chemistry resources","Interactive","Chemical Education Digital Library: simulations and animations."],
+["Chemistry","Media","RSC Periodic Table","https://www.rsc.org/periodic-table","Elements","Reference","Facts, videos and audio for each element."],
+["Biology","Lesson Plan","Biology Corner","https://www.biologycorner.com","Worksheets & labs","Educator-made","Worksheets and labs to practise with."],
+["Biology","Lesson Plan","Amoeba Sisters","https://www.amoebasisters.com","Videos & handouts","Flipped","Short animated videos with free handouts."],
+["Biology","Lesson Plan","DNA Learning Center","https://dnalc.cshl.edu","Genetics","Inquiry","Animations and lab ideas from Cold Spring Harbor."],
+["Biology","Media","Scitable","https://www.nature.com/scitable/","Genetics, ecology","Reference","Nature Education articles and visuals."],
+["Biology","Media","iNaturalist","https://www.inaturalist.org","Biodiversity","Fieldwork","Students record real observations of local species."],
+["Mathematics","Lesson Plan","Desmos Classroom","https://teacher.desmos.com","Activities","Discovery","Free interactive activities you can try yourself."],
+["Mathematics","Lesson Plan","Mathematics Assessment Project","https://www.map.mathshell.org","Lessons","Problem-based","Concept development lessons with task sheets."],
+["Mathematics","Lesson Plan","Underground Mathematics","https://undergroundmathematics.org","A Level topics","Problem-based","Cambridge resources for deeper reasoning."],
+["Mathematics","Lesson Plan","Math Pickle","https://mathpickle.com","Puzzles","Game-based","Puzzles and games to try."],
+["Mathematics","Media","PhET Math","https://phet.colorado.edu/en/simulations/filter?subjects=math","Fractions, graphs","Inquiry","Math simulations."],
+["Mathematics","Media","Wolfram Demonstrations","https://demonstrations.wolfram.com","Demos","Discovery","Thousands of interactive demonstrations."],
+["Mathematics","Media","Math Is Fun","https://www.mathsisfun.com","Explanations","Reference","Clear explanations with interactive tools."],
+["Mathematics","Media","Visual Patterns","https://www.visualpatterns.org","Patterns","Discovery","Pattern prompts for algebra thinking."],
+["Mathematics","Media","Which One Doesn't Belong","https://wodb.ca","Discussion","Discussion","Open prompts that start conversations."],
+["English","Lesson Plan","British Library Learning","https://www.bl.uk/learning","Literature, history","Source analysis","Learning resources built on library collections."],
+["English","Lesson Plan","Poetry Foundation Education","https://www.poetryfoundation.org/education","Poetry","Student-centered","Poems with study guides."],
+["English","Lesson Plan","CommonLit","https://www.commonlit.org","Reading","Close reading","Free reading passages, lessons and assessments."],
+["English","Media","EnglishClub","https://www.englishclub.com","Grammar, vocabulary","Self-study","Free English learning pages."],
+["English","Media","Breaking News English","https://breakingnewsenglish.com","News lessons","Authentic input","Lessons from current news at several levels."],
+["English","Media","Project Gutenberg","https://www.gutenberg.org","Classic texts","Reading","Free classic books."],
+["Economics","Lesson Plan","CORE Econ","https://www.core-econ.org","Economics","Data inquiry","Free modern economics text with exercises."],
+["Economics","Lesson Plan","Veconlab","https://veconlab.econ.virginia.edu","Classroom experiments","Simulation","Free market and auction experiments to try."],
+["Economics","Lesson Plan","Economics Network","https://www.economicsnetwork.ac.uk","Study ideas","Active learning","Resources and explanations."],
+["Economics","Media","World Bank Open Data","https://data.worldbank.org","Country data","Data inquiry","Real indicators for any country."],
+["Sociology","Lesson Plan","The Society Pages","https://thesocietypages.org","Sociology","Discussion","Essays and visuals suitable for class discussion."],
+["Sociology","Media","LibreTexts Social Sciences","https://socialsci.libretexts.org","Textbooks","Textbook","Free open texts on sociology and related topics."],
+["Sociology","Media","World Values Survey","https://www.worldvaluessurvey.org","Surveys","Data inquiry","Compare values across countries."],
+["History","Lesson Plan","Historical Thinking Matters","http://historicalthinkingmatters.org","Source analysis","Inquiry","Investigations that teach students to think like historians."],
+["History","Lesson Plan","Gilder Lehrman Institute","https://www.gilderlehrman.org","History","Source analysis","Learning resources and primary sources."],
+["History","Media","Digital Public Library of America","https://dp.la","Archives","Source analysis","Search digitised sources from US archives."],
+["History","Media","TimeMaps","https://timemaps.com","World history","Visual","Animated maps and timelines."],
+["Geography","Lesson Plan","Esri GeoInquiries","https://www.esri.com/en-us/industries/education/schools/geoinquiries","Mapping","Inquiry","Short free map-based lessons."],
+["Geography","Lesson Plan","NOAA Climate.gov Teaching","https://www.climate.gov/teaching","Climate","Data inquiry","Climate lessons and data tools."],
+["Geography","Lesson Plan","Field Studies Council","https://www.field-studies-council.org","Fieldwork","Fieldwork","Fieldwork guides and identification charts."],
+["Geography","Media","Gapminder Dollar Street","https://www.gapminder.org/dollar-street","Homes & incomes","Visual","Photos from homes at different income levels."],
+["Geography","Media","Worldmapper","https://worldmapper.org","Cartograms","Visual","Maps that resize countries by data."],
+["Geography","Media","USGS Earthquakes","https://earthquake.usgs.gov","Plate tectonics","Data inquiry","Live and historical earthquake data."],
+["Geography","Media","NASA Climate Kids","https://climatekids.nasa.gov","Climate","Visual","Games and explainers."],
+["Geography","Media","PopulationPyramid","https://www.populationpyramid.net","Demography","Data inquiry","Population pyramids for every country and year."],
+["Geography","Media","PhET Earth & Climate","https://phet.colorado.edu/en/simulations/filter?subjects=earth-science","Earth science","Inquiry","Simulations for greenhouse effect, plate tectonics and more."],
+["*","Exams","TKA Practice Simulation","https://pusmendik.kemdikbud.go.id/tka/simulasi_tka","Official practice tests","TKA","Government practice packages for the Tes Kemampuan Akademik (TKA)."],
+["*","Exams","TKA Official Portal","https://tka.kemendikdasmen.go.id","Information & results","TKA","Official portal for TKA information and results."],
+["*","Exams","SNPMB (UTBK-SNBT)","https://www.snpmb.id","Official information","UTBK","Official UTBK-SNBT portal: test structure, schedule and registration. Taking the UTBK itself has a fee."],
+["*","Exams","PapaCambridge","https://pastpapers.papacambridge.com","Past papers","A Level","Large archive of Cambridge past papers and mark schemes. Unofficial site."],
+["*","Exams","CIE Notes","https://www.cienotes.com","Past papers & notes","A Level","Cambridge past papers and notes."],
+["Mathematics","Exams","ExamSolutions","https://www.examsolutions.net","Maths papers","A Level","Video solutions to past paper questions."],
+["Mathematics","Exams","Maths Genie","https://www.mathsgenie.co.uk","Maths papers","A Level","Papers and revision for maths."],
+["Mathematics","Exams","Corbettmaths","https://corbettmaths.com","Practice","A Level","Free practice questions and videos."],
+["*","Lesson Plan","Khan Academy (YouTube)","https://www.youtube.com/@khanacademy","All subjects","YouTube","Step-by-step lessons across many subjects."],
+["*","Lesson Plan","TED-Ed (YouTube)","https://www.youtube.com/@TED-Ed","Animated lessons","YouTube","Short animated lessons with discussion questions."],
+["Physics,Chemistry,Mathematics","Lesson Plan","The Organic Chemistry Tutor (YouTube)","https://www.youtube.com/@TheOrganicChemistryTutor","Worked examples","YouTube","Long, clear worked problems for physics, chemistry and math."],
+["Physics","Lesson Plan","Veritasium (YouTube)","https://www.youtube.com/@veritasium","Concepts","YouTube","Big physics ideas with demonstrations."],
+["Physics","Lesson Plan","Physics Girl (YouTube)","https://www.youtube.com/@physicsgirl","Experiments","YouTube","Fun experiments and explanations."],
+["Physics","Lesson Plan","MinutePhysics (YouTube)","https://www.youtube.com/@minutephysics","Concepts","YouTube","Short whiteboard physics explanations."],
+["Physics","Lesson Plan","Flipping Physics (YouTube)","https://www.youtube.com/@FlippingPhysics","High school physics","YouTube","Lessons following a typical high school physics course."],
+["Chemistry","Lesson Plan","Tyler DeWitt (YouTube)","https://www.youtube.com/@TheTylerDeWitt","Basics","YouTube","Very clear beginner chemistry explanations."],
+["Chemistry","Lesson Plan","Periodic Videos (YouTube)","https://www.youtube.com/@periodicvideos","Elements","YouTube","A video for every element."],
+["Biology","Lesson Plan","Amoeba Sisters (YouTube)","https://www.youtube.com/@AmoebaSisters","High school biology","YouTube","Animated explainers with free handouts."],
+["Biology","Lesson Plan","Bozeman Science (YouTube)","https://www.youtube.com/@bozemanscience","AP & high school biology","YouTube","Concise, clear lessons."],
+["Biology","Lesson Plan","Ninja Nerd (YouTube)","https://www.youtube.com/@NinjaNerdScience","Anatomy, physiology","YouTube","Long whiteboard lectures."],
+["Biology","Lesson Plan","Kurzgesagt (YouTube)","https://www.youtube.com/@kurzgesagt","Big questions","YouTube","Animated videos on science topics."],
+["Biology,Chemistry,Physics","Lesson Plan","Professor Dave Explains (YouTube)","https://www.youtube.com/@ProfessorDaveExplains","Science basics","YouTube","Short explainers across sciences."],
+["Mathematics","Lesson Plan","3Blue1Brown (YouTube)","https://www.youtube.com/@3blue1brown","Visual concepts","YouTube","Visual explanations of calculus, algebra and more."],
+["Mathematics","Lesson Plan","Numberphile (YouTube)","https://www.youtube.com/@numberphile","Number ideas","YouTube","Mathematicians talk about interesting ideas."],
+["Mathematics","Lesson Plan","Professor Leonard (YouTube)","https://www.youtube.com/@ProfessorLeonard","Full courses","YouTube","Complete lecture series."],
+["Mathematics","Lesson Plan","PatrickJMT (YouTube)","https://www.youtube.com/@patrickjmt","Worked examples","YouTube","Short worked examples."],
+["English","Lesson Plan","BBC Learning English (YouTube)","https://www.youtube.com/@bbclearningenglish","Listening & vocabulary","YouTube","Short lessons from the BBC."],
+["English","Lesson Plan","English with Lucy (YouTube)","https://www.youtube.com/@EnglishwithLucy","Grammar & vocabulary","YouTube","Clear lessons for learners."],
+["English","Lesson Plan","Rachel's English (YouTube)","https://www.youtube.com/@rachelsenglish","Pronunciation","YouTube","American English pronunciation."],
+["Economics","Lesson Plan","Marginal Revolution University (YouTube)","https://www.youtube.com/@MRUniversity","Economics","YouTube","Short free economics videos."],
+["Economics","Lesson Plan","Economics Explained (YouTube)","https://www.youtube.com/@EconomicsExplained","Real-world economics","YouTube","Explainers about companies and countries."],
+["Economics","Lesson Plan","Jacob Clifford (YouTube)","https://www.youtube.com/@ACDCLeadership","Economics","YouTube","Fun, clear A Level and AP style lessons."],
+["Economics,Sociology,Geography,History","Lesson Plan","tutor2u (YouTube)","https://www.youtube.com/@tutor2u","A Level topics","YouTube","Exam-focused lessons and revision."],
+["History","Lesson Plan","Kings and Generals (YouTube)","https://www.youtube.com/@KingsandGenerals","Military history","YouTube","Animated history documentaries."],
+["History","Lesson Plan","OverSimplified (YouTube)","https://www.youtube.com/@OverSimplified","Modern history","YouTube","Light, funny summaries of big events."],
+["History","Lesson Plan","Historia Civilis (YouTube)","https://www.youtube.com/@HistoriaCivilis","Ancient history","YouTube","Animated history of Rome and more."],
+["Geography","Lesson Plan","Geography Now (YouTube)","https://www.youtube.com/@GeographyNow","Countries","YouTube","A video on every country."],
+["Geography","Lesson Plan","RealLifeLore (YouTube)","https://www.youtube.com/@RealLifeLore","World geography","YouTube","Why places are the way they are."],
+["Geography","Lesson Plan","Wendover Productions (YouTube)","https://www.youtube.com/@Wendoverproductions","Systems","YouTube","How the world moves goods and people."],
+].map(a=>({s:a[0],c:a[1],t:a[2],u:a[3],m:a[4],h:a[5],n:a[6],p:a[7]||P[a[2]]||"Free"}));
+let X=[],sub=S[0],cat="Lesson Plan",db=null;const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function safe(u){return /^https?:\/\//i.test(u)?u:"#"}
+const FORM_URL="";
+const HUE={Physics:235,Chemistry:275,Biology:150,Mathematics:335,English:205,Economics:55,Sociology:178,History:8,Geography:90};
+function chips(el,arr,cur,fn,lab,hue){$(el).innerHTML="";arr.forEach(v=>{const b=document.createElement("button");b.className="chip"+(v===cur?" on":"");b.textContent=lab(v);if(hue)b.style.setProperty("--h",hue(v));b.onclick=()=>fn(v);$(el).appendChild(b)})}
+function nav(v){$("res").hidden=v!=="res";$("about").hidden=v!=="about";document.querySelectorAll(".nv").forEach(b=>b.classList.toggle("on",b.dataset.v===v));scrollTo(0,0)}
+function render(){
+document.documentElement.style.setProperty("--h",HUE[sub]);chips("subjects",S,sub,v=>{sub=v;render()},v=>E[v]+" "+v,v=>HUE[v]);
+chips("cats",Object.keys(CE),cat,v=>{cat=v;render()},v=>CE[v]+" "+({"Lesson Plan":"Lessons"}[v]||v));
+let r=D.concat(X).filter(x=>(x.s==="*"||String(x.s).split(",").includes(sub))&&x.c===cat);
+const hs=[...new Set(r.map(x=>x.h))].sort(),cur=$("meth").value;
+$("meth").innerHTML='<option value="">'+(cat==="Exams"?"All exams":"All types")+'</option>'+hs.map(h=>`<option${h===cur?" selected":""}>${esc(h)}</option>`).join("");
+const q=$("q").value.toLowerCase(),m=$("meth").value,k=$("sort").value,pr=$("price").value;
+r=r.filter(x=>(!m||x.h===m)&&(!pr||(x.p||"Free")===pr)&&(!q||(x.t+x.m+x.n).toLowerCase().includes(q)));
+r.sort((a,b)=>String(a[k]).localeCompare(String(b[k])));
+$("list").innerHTML=r.length?r.map(x=>`<div class="card"><a href="${esc(safe(x.u))}" target="_blank" rel="noopener">${esc(x.t)} ↗</a><p>${esc(x.n)}</p><span class="tag m">${esc(x.m)}</span><span class="tag ${cat==="Exams"?"u":""}">${esc(x.h)}</span><span class="tag pr ${pc(x.p)}">${esc(x.p||"Free")}</span></div>`).join(""):'<div class="empty">Nothing here yet 🌱<br>IELTS only appears under English. Add a link below to fill this gap.</div>';
+}
+$("q").oninput=render;$("meth").onchange=render;$("price").onchange=render;$("sort").onchange=render;
+$("fs").innerHTML=S.map(s=>`<option>${s}</option>`).join("");
+try{X=JSON.parse(localStorage.getItem("hub_local")||"[]")}catch(e){}
+$("f").onsubmit=async e=>{e.preventDefault();const o=Object.fromEntries(new FormData(e.target));o.t=o.t.trim();
+let ok=false;if(db){try{await db.collection("resources").add(o);ok=true}catch(_){}}
+if(!ok){X.push(o);try{localStorage.setItem("hub_local",JSON.stringify(X))}catch(_){}}
+sub=o.s;cat=o.c;e.target.reset();render()};
+$("dbnote").textContent="Checking shared list…";
+$("formlink").innerHTML=FORM_URL?`<a class="go" style="display:inline-block;padding:6px 14px;text-decoration:none" href="${FORM_URL}" target="_blank" rel="noopener">Open the form</a>`:"(link coming soon)";
+(async()=>{try{db=await claude.use("db")}catch(_){db=null}
+if(db){$("aboutnote").textContent="Links added with the \"Add a link\" button are shared with everyone who can open this page and has permission to contribute. For other cases, use the form above.";$("dbnote").textContent="Links added here are shared with everyone who can open this page and has permission to contribute.";
+db.collection("resources").onSnapshot(s=>{X=s.docs.map(d=>d.data()).filter(d=>d&&d.u&&d.t&&d.s&&d.c);render()},()=>{})}
+else $("dbnote").textContent="Sharing needs sign-in. For now, links you add are saved only on this device."})();
+render();
+</script></body></html>
+
+</body></html>
